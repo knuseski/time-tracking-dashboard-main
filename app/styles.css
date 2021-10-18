@@ -1,0 +1,227 @@
+:root {
+    --blue: hsl(246, 80%, 60%);
+
+    --bg-work: hsl(15, 100%, 70%);
+    --bg-play: hsl(195, 74%, 62%);
+    --bg-study: hsl(348, 100%, 68%);
+    --bg-exercise: hsl(145, 58%, 55%);
+    --bg-social: hsl(264, 64%, 52%);
+    --bg-self-care: hsl(43, 84%, 65%);
+
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --dark-blue-hover: hsl(235, 46%, 30%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+
+    --font-size: 1.125rem;
+    --spacing: 1.5em;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: var(--font-size);
+    line-height: 1.6;
+    color: white;
+    height: 100%;
+}
+
+.color-desaturated-blue {
+    color: var(--desaturated-blue);
+}
+
+img {
+    display: block;
+    max-width: 100%
+}
+
+/*************************************/
+
+main {
+    background: var(--very-dark-blue);
+    height: 100%;
+}
+
+.card-container {
+    margin: 0 auto;
+    padding: var(--spacing);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+    /*max-width: 400px;*/
+}
+
+.hero-card {
+    border-radius: 20px;
+    background: var(--dark-blue);
+}
+
+.hero-card__user {
+    border-radius: 20px;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    align-items: center;
+    background: var(--blue);
+    display: flex;
+}
+
+.hero-card__menu {
+    padding: var(--spacing) 2em;
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+}
+
+.hero-card__menu p:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.hero-card__user img {
+    border-radius: 50%;
+    border: 2px solid white;
+    max-width: 75px;
+}
+
+.hero-card__report {
+    font-size: 0.8rem;
+    color: var(--pale-blue);
+}
+
+.card {
+    background-image: url("images/icon-work.svg");
+    background-color: var(--bg-work);
+    background-repeat: no-repeat;
+    background-position: 95% -10px;
+    background-blend-mode: revert;
+    border-radius: 20px;
+}
+
+.card__content {
+    border-radius: 20px;
+    padding: 2em var(--spacing);
+    background: var(--dark-blue);
+    margin-top: 2em;
+}
+
+.card__content:hover {
+    cursor: pointer;
+    background: var(--dark-blue-hover);
+}
+
+.card__hours {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.card__header, .card__history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card__dots {
+    width: 20px;
+    height: 5px;
+    margin-left: auto;
+    color: var(--pale-blue);
+}
+
+.card__week {
+    margin-left: auto;
+    color: var(--pale-blue);
+}
+
+.card.play {
+    background-image: url("images/icon-play.svg");
+    background-color: var(--bg-play);
+}
+
+.card.study {
+    background-image: url("images/icon-study.svg");
+    background-color: var(--bg-study);
+}
+
+.card.exercise {
+    background-image: url("images/icon-exercise.svg");
+    background-color: var(--bg-exercise);
+}
+
+.card.social {
+    background-image: url("images/icon-social.svg");
+    background-color: var(--bg-social);
+}
+
+.card.self-care {
+    background-image: url("images/icon-self-care.svg");
+    background-color: var(--bg-self-care);
+}
+
+@media (min-width: 800px) {
+
+    body {
+        height: 100vh;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 1000px;
+    }
+
+    .hero-card {
+        grid-row: 1 / -1;
+    }
+
+    .hero-card__name {
+        font-weight: 300;
+        line-height: 1;
+        font-size: 2rem;
+    }
+
+    .hero-card__user {
+        align-items: flex-start;
+        flex-direction: column;
+        height: 350px;
+    }
+
+    .hero-card__report {
+        margin-top: 2em;
+    }
+
+
+    .hero-card__menu {
+        flex-direction: column;
+    }
+
+    .card__hours {
+        font-size: 3rem;
+    }
+
+    .card__history {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card__week {
+        font-size: 0.8rem;
+        margin: 0 0 0.6em 0;
+    }
+}
